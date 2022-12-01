@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 import Games from '../components/Games'
-import {Button} from '@chakra-ui/react';
+import {Button, Container, Text, VStack} from '@chakra-ui/react';
 import Form from '../components/Form';
+import { useDisclosure } from '@chakra-ui/react'
+import { useWorldCupContext } from '../context/WorldCupContext';
+
 
 const Home = () => {
 
-  const [adding, setAdding]= useState(false);
+  const {isOpen, setIsOpen} = useWorldCupContext();
+// const { isOpen, onOpen, onClose} = useDisclosure()
+
 
   return (
-    <div>
-    <h1>World Cup Games</h1>
-    <Button onClick= {()=> setAdding(true)}>Add more games</Button>
-    {adding && (
-      <Form/>
-    )}
-    <Games/>
-    </div>
+    <Container centerContent maxW= '6xl'>
+      <VStack spacing='24px' direction= 'column' width= '100%'>
+        <Text mt= {10} fontSize= '6xl'>World Cup Games</Text>
+        <Button onClick={()=> setIsOpen(true)}>Add more games</Button>
+        {isOpen && 
+        <Form/>
+        }
+        <Games/>
+      </VStack>
+    </Container>
   )
 }
 

@@ -5,6 +5,7 @@ import { INIT_WORLD_CUP_GAMES, getGamesByCountry, Game } from '../data/WorldCupD
 const Country:React.FC = () => {
 
   const {countryName} = useParams();
+  //country name is case sensitive
 
   if (!countryName){
     return <div>No country name</div>;

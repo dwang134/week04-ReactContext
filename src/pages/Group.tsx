@@ -31,6 +31,8 @@ const Groups:React.FC = () => {
     const letter:string = groupName.toUpperCase(); //A a
     //how to check if parameter is not /group/"1"
     if (letter in Group){
+
+      //NEED FIX
       // setSelectGroup(Object.keys(Group)[letter])
     }else{
 
