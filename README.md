@@ -6,31 +6,32 @@ Please take a look at /data/WorldCupDataHelper.ts and /context/WorldCupContext.t
 
 Note: Please feel free to make changes to any file expect the WorldCupDataHelper.ts
 
-## Games
+## Games (almost done)
 
-- Games sould be shown directly under the root route (done)
-- Display all the world cup games from the contextApi (done)
-- Can remove certain world cup game from the contextApi (done)
+- Games sould be shown directly under the root route 
+- Display all the world cup games from the contextApi
+- Can remove certain world cup game from the contextApi
 - form is not adding to the allGames state, probably something wrong with the state
 
 ### Bonus:
 
-- Can add new world cup game and store it in the contextApi
+- Can add new world cup game and store it in the contextApi (stuck on some errors)
 
-## Country
+## Country (done)
 
 - Display the country name as title
 - Add the button to go back to games page
 - All games belongs to the country should be shown under the route `/country/{countryName}`
 - Filter country function doesn’t consider for case sensitive
 
-## Group
+## Group (done)
 
 - Display the group name as title
 - Add the button to go back to games page
 - All games belongs to each country hould be shown under the route `/group/{groupName}`
 - Group is made of special type Group A, with a space in the middle 
-- Need to make an object with corresponding group X
+- Need to make an object with corresponding group X (done)
+- Group infinetly re-renders
 
 # Getting Started with Create React App
 

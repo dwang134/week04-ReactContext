@@ -1,3 +1,4 @@
+import { Card, CardBody, VStack, Stack, Box, Text} from '@chakra-ui/react';
 import React from 'react'
 import {useParams, Link} from 'react-router-dom';
 import { INIT_WORLD_CUP_GAMES, getGamesByCountry, Game } from '../data/WorldCupDataHelper';
@@ -12,27 +13,32 @@ const Country:React.FC = () => {
   }
 
   return (
-    <div>
+    <VStack mt= {20}>
     <h2>Games related to: {countryName}</h2>
     <Link to= '/'>Go back to games page</Link>
     {getGamesByCountry(countryName, INIT_WORLD_CUP_GAMES).map((game:Game)=> (
-        <div className="game-container">
-        <div className="game-header">
-        <h4>{game.id}</h4>
-        <button onClick= {()=> removeGameById(game.id)}></button>
-        </div>
-        <div className="country-container">
-        <h2>{game.countryOne.name}</h2>    
-        <h2>{game.countryOne.score}</h2>
-        </div>
-        <div className="country-container">
-        <h2>{game.countryTwo.name}</h2>
-        <h2>{game.countryTwo.score}</h2>
-        </div>
-        <div>{game.group}</div>
-      </div>
+     <Card maxW= 'md' align= 'center' width= '20rem'>
+     <CardBody>
+     <VStack>
+     <h4>{game.id}</h4>
+     <button onClick= {()=> removeGameById(game.id)}></button>
+             <Stack spacing= '24px' direction= 'row'>
+             <Box>
+                 <h2>{game.countryOne.name}</h2>
+                 <h2>{game.countryOne.score}</h2>
+             </Box>
+             <Text size= '3xl'>VS.</Text>
+             <Box>
+                 <h2>{game.countryTwo.name}</h2>
+                 <h2>{game.countryTwo.score}</h2>
+             </Box>
+             </Stack>
+             <div>{game.group}</div>
+         </VStack>
+     </CardBody>
+   </Card>
     ))}
-    </div>
+    </VStack>
   )
 }
 
